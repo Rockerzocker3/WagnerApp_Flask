@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Willkommen</title>
+    <style>
+        /* Stil für das gesamte Dokument */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffb5b5; /* Pastellrot */
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .form {
+            margin-top: 20px;
+        }
+
+        /* Stil für den Knopf */
+        .add-note-button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 20px; /* Platzieren Sie den Knopf unterhalb des Textes */
+        }
+        .logout-button {
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Herzlich Willkommen auf deinem Profil "{{ username }}"</h1>
+        <!-- Füge den Knopf hinzu, der auf add_note.html verweist -->
+        <a class="add-note-button" href="{{ url_for('add_note_page') }}">Notiz hinzufügen</a>
+		<a href="{{ url_for('view_notes') }}" class="btn btn-primary">Notiz anzeigen</a>
+        <form action="/logout" method="post">
+            <button class="logout-button" type="submit">Abmelden</button>
+        </form>
+    </div>
+</body>
+</html>

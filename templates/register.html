@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registrieren</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #a9e5b0; /* Pastellgrün */
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .form {
+            margin-top: 20px;
+        }
+        .form label {
+            display: block;
+            text-align: left;
+        }
+        .form input[type="text"],
+        .form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px auto; /* Hier ändern wir 'margin' und setzen 'auto', um die Eingabefelder zentriert zu positionieren */
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .form button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registrieren</h1>
+		 <!-- Display the error message if it exists -->
+        {% if error %}
+            <div class="alert alert-danger">
+                {{ error }}
+            </div>
+        {% endif %}
+        <div class="form">
+            <form method="post">
+                <label for="username">Benutzername:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Passwort:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Registrieren</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

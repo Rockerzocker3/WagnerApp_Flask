@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Impressum</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d8c2f5; /* Einheitlicher Pastellviolettton */
+            color: #333; /* Textfarbe auf dem pastellvioletten Hintergrund */
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .info {
+            margin-top: 20px;
+        }
+        .image-container {
+            text-align: center;
+        }
+        .image {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Impressum</h1>
+        <div class="info">
+            <p><strong>Autor:</strong> Roman Wagner</p>
+            <p><strong>Erstelldatum:</strong> 02.11.2023</p>
+        </div>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='bilder/autor.jpg') }}" alt="Autorfoto" class="image">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meine Notizen</title>
+</head>
+<body>
+    <h1>Meine Notizen</h1>
+    <ul>
+        {% for note in notes %}
+        <li>
+            <div class="note">
+                <p><strong>Von {{ note.user.username }}</strong></p>
+                <p>{{ note.content }}</p>
+                <!-- Löschformular für jede Notiz -->
+                <form action="{{ url_for('delete_note', note_id=note.id) }}" method="POST">
+                    <button type="submit">Löschen</button>
+                </form>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+    <form method="post" action="/add_note">
+        <label for="content">Neue Notiz:</label>
+        <input type="text" id="content" name="content" required>
+        <button type="submit">Hinzufügen</button>
+    </form>
+    <a href="/">Zurück zur Startseite</a>
+</body>
+</html>
